@@ -5,6 +5,23 @@ Neni to seznam zmen v kodu (ten je v [CHANGELOG.md](CHANGELOG.md)), ale zaznam
 co se delalo, proc, a s jakym vysledkem - hlavne pro pripady, kdy je potreba se
 k necemu vratit pozdeji.
 
+## 2026-08-12 (rozjezd na dalsim stroji)
+
+Repo naklonovano na druhy notebook (Acer). Zjisteno a opraveno: bare
+prikaz `python`/`pythonw` na tomto stroji resil na prazdnou Microsoft
+Store "stub" verzi (`AppData\Local\Microsoft\WindowsApps\python.exe`),
+protoze byla v uzivatelskem PATH pred skutecnou instalaci Pythonu
+(`AppData\Local\Python\bin`, Python 3.14.6). To by rozbilo `spustit.ps1`
+(hlaska "Python nebyl nalezen; spustte Microsoft Store...").
+
+Oprava: preuspoada uzivatelsky PATH tak, aby `AppData\Local\Python\bin`
+byl pred `WindowsApps`. Pokud se stejny problem objevi na dalsim stroji,
+zkontrolovat poradi v `[Environment]::GetEnvironmentVariable("Path","User")`.
+
+Flask chybel (`requests`/`bs4` uz nainstalovane byly), doinstalovan.
+Appka po oprave nastartovala a servuje spravny obsah (`GET /` -> 200,
+"Archiv inzeratu - annonce.cz").
+
 ## 2026-08-01 (refaktoring)
 
 Na pozadavek "udelej debugging i refactoring" pridana sdilena funkce
