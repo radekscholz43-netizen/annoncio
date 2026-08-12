@@ -37,8 +37,27 @@ filtrovani a hromadne stahovani.
    tam musi byt mezi povolenymi aplikacemi, jinak blokuje zapis do
    `stazene_inzeraty\`. Uz jednou reseno, viz WORKLOG.md (2026-08-01).
 
+## Mobil (Android, Termux)
+
+Kod nema zadne Windows-specificke zavislosti (`pathlib` vsude, zadne
+`win32`/zpetna lomitka) - na Termuxu (viz mercurio/docs/nastaveni-noveho-stroje.md
+§4 pro instalaci Termuxu samotneho) by mel bezet beze zmen:
+
+1. `pkg install git nodejs` (git uz je potreba i pro mercurio, nodejs jen pro Claude Code)
+2. `pkg install python`
+3. `git clone https://github.com/radekscholz43-netizen/annoncio.git`
+4. `cd annoncio && git config user.name "Radek" && git config user.email "radek.scholz43@gmail.com"`
+5. `pip install flask requests beautifulsoup4`
+6. `python app.py` (zadny `spustit.ps1` ekvivalent zatim neni - ten je Windows-only; spustit rucne)
+7. Otevrit `http://127.0.0.1:5000` v mobilnim prohlizeci (bezi na stejnem zarizeni)
+
+**Neotestovano na realnem telefonu** (2026-08-12) - jen odvozeno z toho, ze
+kod nema OS-specificke zavislosti. Windows Defender Controlled Folder Access
+bug (viz WORKLOG 2026-08-01) je Windows-specificky, na Androidu nerelevantni.
+
 ## Stav po strojich
 
 - **Acer 16** - hotovo a overeno zive (2026-08-12): git napojen, PATH opraven, appka bezi.
 - **Acer 32** - hotovo a overeno zive (2026-08-12): cisty Python 3.14.7 pres winget, appka bezi. Stahovani novych inzeratu (zapis do `stazene_inzeraty/`) tam jeste netestovano.
 - **HP stribrny** (puvodni stroj) - predpoklad, ze funguje (tady se delal puvodni vyvoj/debugging 2026-08-01), neni ale zive overeno po zalozeni tohoto checklistu.
+- **Mobil (Android)** - postup napsany, zatim neprovedeno/neotestovano na realnem telefonu.
