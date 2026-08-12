@@ -5,6 +5,21 @@ Neni to seznam zmen v kodu (ten je v [CHANGELOG.md](CHANGELOG.md)), ale zaznam
 co se delalo, proc, a s jakym vysledkem - hlavne pro pripady, kdy je potreba se
 k necemu vratit pozdeji.
 
+## 2026-08-12 (rozjezd na stroji "Acer 32")
+
+Repo naklonovano na treti stroj, pojmenovany "Acer 32". Python zde vubec
+nebyl nainstalovan (jen prazdna Microsoft Store "stub" verze v PATH) -
+nainstalovan cisty Python 3.14.7 pres `winget install Python.Python.3.14`,
+instalator uz spravne zaradil skutecnou cestu pred WindowsApps v PATH,
+zadna rucni oprava poradi nebyla potreba (na rozdil od druheho notebooku
+nize). Flask/requests/beautifulsoup4 doinstalovany, server nastartovan
+(`python app.py`) a overen: `GET /` -> 200, spravny obsah ("Archiv
+inzeratu - annonce.cz"). Lokalni archiv `stazene_inzeraty/` obsahuje
+137 slozek shodne s repem. Stahovani novych inzeratu (zapis do
+`stazene_inzeraty/`) na tomto stroji jeste netestovano - pokud narazi na
+stejnou chybu jako drive (WinError 2 / Errno 9), pricina je pravdepodobne
+opet Windows Defender Rizeny pristup ke slozkam, viz zaznam nize.
+
 ## 2026-08-12 (rozjezd na dalsim stroji)
 
 Repo naklonovano na druhy notebook (Acer). Zjisteno a opraveno: bare
