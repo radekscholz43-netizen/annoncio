@@ -40,5 +40,5 @@ filtrovani a hromadne stahovani.
 ## Stav po strojich
 
 - **Acer 16** - hotovo a overeno zive (2026-08-12): git napojen, PATH opraven, appka bezi.
+- **Acer 32** - hotovo a overeno zive (2026-08-12): cisty Python 3.14.7 pres winget, appka bezi. Stahovani novych inzeratu (zapis do `stazene_inzeraty/`) tam jeste netestovano.
 - **HP stribrny** (puvodni stroj) - predpoklad, ze funguje (tady se delal puvodni vyvoj/debugging 2026-08-01), neni ale zive overeno po zalozeni tohoto checklistu.
-- **Acer 32** - zatim vubec nenastaveno.
