@@ -5,6 +5,15 @@ Neni to seznam zmen v kodu (ten je v [CHANGELOG.md](CHANGELOG.md)), ale zaznam
 co se delalo, proc, a s jakym vysledkem - hlavne pro pripady, kdy je potreba se
 k necemu vratit pozdeji.
 
+## 2026-08-14 (zruseni CHANGELOG.md)
+
+Zrusen CHANGELOG.md - cely obsah (request_with_retry retry logika,
+download_one refaktoring, oprava index.csv, root cause Windows Defender
+Controlled Folder Access, seznam funkci z pocatecni verze) uz byl
+podrobneji zapsany v tomto WORKLOGu. Bez verzovanych vydani pro externi
+uzivatele je oddeleny CHANGELOG zbytecna duplicita - WORKLOG staci jako
+jediny zdroj pravdy. Odkaz odstranen z README.md.
+
 ## 2026-08-14 (mobil bez zavislosti na notebooku)
 
 Pozadavek: annoncio ma jit otevrit v Chrome na mobilu, bez ohledu na to,

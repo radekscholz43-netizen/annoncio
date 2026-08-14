@@ -11,8 +11,7 @@ filtrovani a hromadne stahovani.
 - `app.py` - lokalni web (Flask, `127.0.0.1:5000`) - formular, tabulka, detail s galerii
 - `spustit.ps1` / `spustit.bat` - jednoklikove spusteni (doinstaluje zavislosti, spusti server na pozadi, otevre prohlizec)
 - `stazene_inzeraty/` - archiv (sledovano v gitu, ne gitignorovano)
-- `WORKLOG.md` - denik prace vcetne detailu vyresenych bugu
-- `CHANGELOG.md` - prehled zmen v kodu
+- `WORKLOG.md` - denik prace vcetne detailu vyresenych bugu (co se delalo, proc, a s jakym vysledkem - vcetne technickych zmen v kodu)
 
 ## Nastaveni na dalsim stroji
 
