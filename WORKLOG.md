@@ -5,6 +5,23 @@ Neni to seznam zmen v kodu (ten je v [CHANGELOG.md](CHANGELOG.md)), ale zaznam
 co se delalo, proc, a s jakym vysledkem - hlavne pro pripady, kdy je potreba se
 k necemu vratit pozdeji.
 
+## 2026-08-14 (jednodussi mobilni cesta: Pydroid 3 misto Termuxu)
+
+Radek odmitl dalsi krokovani pres Termux ("sereme na termux, chci jednu
+appku, ne 10 aplikaci"). Spravna pripominka: Termux+proot-distro+Ubuntu
+byl navrzen kvuli beh Claude Code CLI na mobilu (viz mercurio WORKLOG
+2026-08-12), ne kvuli annoncio - pro pouhe spusteni jednoho Flask
+souboru je to zbytecne mnoho vrstev.
+
+Pridana alternativa v README.md: **Pydroid 3** (jedna appka z Google
+Play, vestaveny Python+pip+spoustec, zadny Linux/Termux navic). Postup:
+stahnout repo jako ZIP z GitHubu v Chrome (misto git clone), rozbalit,
+otevrit `app.py` v Pydroidu, spustit, doinstalovat zavislosti pres Pip
+menu, znovu spustit, otevrit `http://127.0.0.1:5000` v Chrome.
+
+**Neotestovano na realnem telefonu** - az se vyzkousi, zapsat vysledek
+(funkcni/nefunkcni, konkretni chyby) sem.
+
 ## 2026-08-14 (zruseni CHANGELOG.md)
 
 Zrusen CHANGELOG.md - cely obsah (request_with_retry retry logika,

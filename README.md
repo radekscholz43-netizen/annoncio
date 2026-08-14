@@ -36,7 +36,32 @@ filtrovani a hromadne stahovani.
    tam musi byt mezi povolenymi aplikacemi, jinak blokuje zapis do
    `stazene_inzeraty\`. Uz jednou reseno, viz WORKLOG.md (2026-08-01).
 
-## Mobil (Android, Termux)
+## Mobil (Android, Pydroid 3) - doporuceny jednodussi zpusob
+
+Termux + proot-distro Ubuntu (viz nize) byl navrzen kvuli beh Claude Code
+CLI na mobilu, ne kvuli annoncio - pro pouhe spusteni jednoho Flask
+souboru je to zbytecne tezkopadne (Termux -> proot-distro -> Ubuntu ->
+apt zavislosti). Pro annoncio samotne staci jedna appka: **Pydroid 3**
+(zdarma, Google Play) - ma vestaveny Python, pip i spoustec, zadny Linux
+navic.
+
+1. Nainstalovat **Pydroid 3** z Google Play.
+2. V Chrome otevrit stranku annoncio repa na GitHubu -> **Code -> Download
+   ZIP** (funguje i na soukromem repu, pokud je prohlizec prihlaseny).
+3. Zip rozbalit (systemova appka Soubory umi Extract/Rozbalit).
+4. V Pydroid 3 pres jeho vlastni spravce souboru otevrit `app.py`
+   z rozbalene slozky.
+5. Spustit (tlacitko Run). Poprve pravdepodobne spadne na chybejicim
+   `flask`/`requests`/`beautifulsoup4` - doinstalovat pres Pydroid Pip
+   menu (nebo vestaveny terminal: `pip install flask requests
+   beautifulsoup4`), pak spustit znovu.
+6. Az se objevi "Running on http://127.0.0.1:5000", prepnout na Chrome
+   a otevrit tu adresu. Pro dalsi pouziti stranku zalozkovat.
+
+**Neotestovano na realnem telefonu** (2026-08-14) - postup odvozen z
+dokumentace Pydroid 3, jeste nepotvrzeno zive pro annoncio konkretne.
+
+## Mobil (Android, Termux) - puvodni zpusob, slozitejsi
 
 Kod nema zadne Windows-specificke zavislosti (`pathlib` vsude, zadne
 `win32`/zpetna lomitka) - na Termuxu (viz mercurio/docs/nastaveni-noveho-stroje.md
