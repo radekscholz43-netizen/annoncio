@@ -1,7 +1,7 @@
-#!/data/data/com.termux/files/usr/bin/bash
-# Jednoklikove spusteni annoncio na mobilu (Termux). Ekvivalent spustit.ps1/.bat
-# pro Windows. Spusti server na pozadi (prezije zavreni Termuxu jen s
-# termux-wake-lock, jinak Android proces casem uspi) a otevre Chrome.
+#!/usr/bin/env bash
+# Jednoklikove spusteni annoncio na mobilu (Termux + proot-distro Ubuntu).
+# Ekvivalent spustit.ps1/.bat pro Windows. Spusti server na pozadi a otevre
+# Chrome (pokud je dostupny termux-api), jinak jen vypise URL k otevreni.
 
 set -e
 cd "$(dirname "$0")"
@@ -11,7 +11,9 @@ server_up() {
 }
 
 if ! server_up; then
-    python3 -c "import flask, requests, bs4" 2>/dev/null || pip install --quiet flask requests beautifulsoup4
+    python3 -c "import flask, requests, bs4" 2>/dev/null \
+        || python3 -m pip install --quiet flask requests beautifulsoup4 \
+        || python3 -m pip install --quiet --break-system-packages flask requests beautifulsoup4
 
     nohup python3 app.py > /tmp/annoncio.log 2>&1 &
     disown
