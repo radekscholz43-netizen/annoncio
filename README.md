@@ -47,11 +47,25 @@ Kod nema zadne Windows-specificke zavislosti (`pathlib` vsude, zadne
 2. `pkg install python`
 3. `git clone https://github.com/radekscholz43-netizen/annoncio.git`
 4. `cd annoncio && git config user.name "Radek" && git config user.email "radek.scholz43@gmail.com"`
-5. `pip install flask requests beautifulsoup4`
-6. `python app.py` (zadny `spustit.ps1` ekvivalent zatim neni - ten je Windows-only; spustit rucne)
-7. Otevrit `http://127.0.0.1:5000` v mobilnim prohlizeci (bezi na stejnem zarizeni)
+5. `bash spustit_mobil.sh` - jednoklikovy ekvivalent `spustit.ps1` pro Termux:
+   doinstaluje `flask`/`requests`/`beautifulsoup4`, spusti server na pozadi
+   (nohup, prezije zavreni tohoto prikazu) a pokud je nainstalovany
+   `termux-api` balicek, rovnou otevre Chrome. Bez `termux-api` jen vypise
+   URL k rucnimu otevreni.
+6. Otevrit (nebo zkontrolovat, ze se otevrelo) `http://127.0.0.1:5000` v
+   mobilnim prohlizeci - bezi primo na telefonu, notebook nemusi byt zapnuty.
+   Pro dalsi pouziti stranku v Chrome zalozkovat, at se nemusi pokazde
+   spoustet Termux rucne pres prikazovou radku.
 
-**Neotestovano na realnem telefonu** (2026-08-12) - jen odvozeno z toho, ze
+**Bezi primo na telefonu, ne v cloudu** - vedomé rozhodnuti (2026-08-14):
+appka archivuje osobni udaje (telefonni cisla, fotky) tretich osob z
+inzeratu, takze verejne cloudove hostovani by je vystavilo internetu bez
+jejich souhlasu. Spusteni v Termuxu na vlastnim telefonu tohle obchazi -
+zadna verejna expozice, zadny novy ucet, zadna zavislost na tom, jestli je
+zapnuty nejaky notebook.
+
+**Neotestovano na realnem telefonu** (2026-08-12, skript `spustit_mobil.sh`
+pridan 2026-08-14 a taky jeste neotestovan zive) - jen odvozeno z toho, ze
 kod nema OS-specificke zavislosti. Windows Defender Controlled Folder Access
 bug (viz WORKLOG 2026-08-01) je Windows-specificky, na Androidu nerelevantni.
 

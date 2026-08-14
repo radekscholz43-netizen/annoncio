@@ -5,7 +5,22 @@ Neni to seznam zmen v kodu (ten je v [CHANGELOG.md](CHANGELOG.md)), ale zaznam
 co se delalo, proc, a s jakym vysledkem - hlavne pro pripady, kdy je potreba se
 k necemu vratit pozdeji.
 
-## 2026-08-12 (rozjezd na stroji "Acer 32")
+## 2026-08-14 (mobil bez zavislosti na notebooku)
+
+Pozadavek: annoncio ma jit otevrit v Chrome na mobilu, bez ohledu na to,
+jestli je zapnuty nejaky notebook. Zvazovana varianta verejneho cloud
+hostingu (Render/PythonAnywhere apod.) - zamitnuta: appka archivuje osobni
+udaje (telefonni cisla, fotky) tretich osob z inzeratu, verejne hostovani
+i za heslem by je zbytecne vystavilo internetu a poruseni ToS hostingu
+(obsah je z inzeratu dospele/erotické sluzby). Misto toho zvoleno: appka
+bezi primo na telefonu v Termuxu (uz drive zprovoznenem pro Claude Code na
+mobilu, viz mercurio WORKLOG 2026-08-12, ~/annoncio uz naklonovane).
+
+Pridan `spustit_mobil.sh` - Termux ekvivalent `spustit.ps1`: doinstaluje
+zavislosti, spusti server na pozadi (`nohup`), a pokud je dostupny
+`termux-api` (`termux-open-url`), rovnou otevre Chrome; jinak vypise URL.
+Doplnen postup v README.md (mobilni sekce). **Skript zatim neoveren na
+realnem telefonu** - az se otestuje, zapsat vysledek sem.
 
 Repo naklonovano na treti stroj, pojmenovany "Acer 32". Python zde vubec
 nebyl nainstalovan (jen prazdna Microsoft Store "stub" verze v PATH) -
